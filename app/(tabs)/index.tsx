@@ -1,28 +1,57 @@
-import { ThemedText } from "@/components/ThemedText";
-import TodoItem from "@/components/TodoItem";
-import { StyleSheet, View } from "react-native";
+import ProfileCard from "@/components/ProfileCard";
+import { ScrollView, StyleSheet } from "react-native";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.mainView}>
-     <ThemedText type='title' style={styles.title}>My Todo List</ThemedText>
-     <TodoItem text="Aller dormir" />
-     <TodoItem text="Dejeuner" />
-     <TodoItem text="Aller à l'école" />
-     <TodoItem text="Apprendre react native" />
-    </View>
+
+    <ScrollView>
+    <ProfileCard
+name="Aya"
+jobTitle="Product Owner"
+imageUrl="https://picsum.photos/200/300"
+/>
+<ProfileCard
+name="Louis"
+jobTitle="le toxico"
+imageUrl="https://picsum.photos/200/300"
+/>
+<ProfileCard
+name="jiji"
+jobTitle="La plus belle"
+imageUrl="https://picsum.photos/200/300"
+/>
+</ScrollView>
 
   );
 }
 
 const styles = StyleSheet.create({
-
-  mainView: {
-    padding: 20
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
   },
-
-  title : {
-      textAlign: "center",
-      marginBottom: 20
-  }
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 20,
+  },
+  item: {
+    backgroundColor: '#ffffff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  nom: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  email: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 4,
+  },
 });
